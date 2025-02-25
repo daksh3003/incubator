@@ -6,42 +6,42 @@ export const startup = defineType({
     type: "document",
     fields:[
         defineField({
-            name: 'title',
-            type: 'string'
+            name: "title",
+            type: "string"
         }),
         defineField({
-            name: 'slug',
-            type: 'slug',
+            name: "slug",
+            type: "slug",
             options:{
                 source: "title"
             }
         }),
         defineField({
-            name: 'author',
-            type: 'reference',
+            name: "author",
+            type: "reference",
             to: {type:"author"}
         }),
         defineField({
-            name: 'views',
-            type: 'number'
+            name: "views",
+            type: "number"
         }),
         defineField({
-            name: 'description',
-            type: 'text'
+            name: "description",
+            type: "text"
         }),
         defineField({
-            name: 'category',
-            type: 'string',
-            validation: (Rule)=> Rule.min(1).max(20).required().error('Please enter a category for your startup')
+            name: "category",
+            type: "string",
+            validation: (Rule)=> Rule.min(1).max(20).required().error("Please enter a category for your startup")
         }),
         defineField({
-            name: 'image',
-            type: 'url',
+            name: "image",
+            type: "url",
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: 'pitch',
-            type: 'markdown',
+            name: "pitch",
+            type: "markdown",
         }),
     ],
 })
