@@ -7,59 +7,6 @@ import { STARTUPS_QUERIES } from "@/sanity/lib/queries";
 export default async function Home({searchParams}:{searchParams: Promise<{query:string}>}) {
   const query = (await searchParams).query;
   const posts = await client.fetch(STARTUPS_QUERIES);
-  console.log(JSON.stringify(posts,null,2));
-  // const posts =[
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author:{_id: 1,name:'Daksh'},
-  //     _id: 1,
-  //     description: "This is the description of the startup",
-  //     image:"https://images.unsplash.com/photo-1739433438073-397a07dccdd5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D",
-  //     category: "ghosts",
-  //     title: "ghostbusters"
-  //   },
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author:{_id: 1,name:'Daksh'},
-  //     _id: 2,
-  //     description: "This is the description of the startup",
-  //     image:"https://images.unsplash.com/photo-1739433438073-397a07dccdd5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D",
-  //     category: "ghosts",
-  //     title: "ghostbusters"
-  //   },
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author:{_id: 3,name:'Daksh'},
-  //     _id: 3,
-  //     description: "This is the description of the startup",
-  //     image:"https://images.unsplash.com/photo-1739433438073-397a07dccdd5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D",
-  //     category: "ghosts",
-  //     title: "ghostbusters"
-  //   },
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author:{_id: 1,name:'Daksh'},
-  //     _id: 4,
-  //     description: "This is the description of the startup",
-  //     image:"https://images.unsplash.com/photo-1739433438073-397a07dccdd5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D",
-  //     category: "ghosts",
-  //     title: "ghostbusters"
-  //   },
-  //   {
-  //     _createdAt: new Date(),
-  //     views: 55,
-  //     author:{_id: 5,name:'Daksh'},
-  //     _id: 5,
-  //     description: "This is the description of the startup",
-  //     image:"https://images.unsplash.com/photo-1739433438073-397a07dccdd5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D",
-  //     category: "ghosts",
-  //     title: "ghostbusters"
-  //   },
-  // ];
   return (
     <>
     <section className="pink_container">
