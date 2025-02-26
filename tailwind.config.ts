@@ -18,6 +18,10 @@ const config: Config = {
                     "100": "#FFE8F0",
                     DEFAULT: "#EE2B69",
                 },
+                border: "#d1d5db", 
+                ring: "#6366f1",
+                background: "#ffffff",
+                foreground: "#000000",
                 secondary: "#FBE843",
                 black: {
                     "100": "#333333",
