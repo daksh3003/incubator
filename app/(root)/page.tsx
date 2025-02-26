@@ -9,7 +9,6 @@ export default async function Home({searchParams}:{searchParams: Promise<{query:
   const query = (await searchParams).query;
   const params = {search: query || null};
   const {data:posts} = await sanityFetch({query:STARTUPS_QUERIES,params });
-  console.log(posts);
   return (
     <>
     <section className="pink_container">
