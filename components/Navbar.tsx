@@ -2,6 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import { auth , signIn, signOut } from '@/auth'
+import { BadgePlus, LogOut } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { FaGithub, FaGoogle } from 'react-icons/fa'
 
 
 const Navbar =  async() => {
@@ -16,19 +19,29 @@ const Navbar =  async() => {
             <div className='flex items-center gap-5 text-black'>
                 {session && session?.user?(
                 <>
-                <Link href='/startup/create'>
-                    <span>Create</span>
-                </Link>
+              <Link href="/startup/create">
+                <span className="max-sm:hidden">Create</span>
+                <BadgePlus className="size-6 sm:hidden" />
+              </Link>
                 <form action={async()=>{
                     "use server";
                     await signOut({redirectTo:"/"});
                     }}>
-                    <button type='submit'>LogOut</button>
+                  <button type="submit">
+                  <span className="max-sm:hidden">Logout</span>
+                  <LogOut className="size-6 sm:hidden text-red-500" />
+                </button>
                 </form>
 
                 <Link href={`/user/${session?.id}`}>
-                    <span>{session?.user?.name}</span>
-                </Link>
+                <Avatar className="size-10">
+                  <AvatarImage
+                    src={session?.user?.image || ""}
+                    alt={session?.user?.name || ""}
+                  />
+                  <AvatarFallback>AV</AvatarFallback>
+                </Avatar>
+              </Link>
                 </>    
             ):(
                 <div className='flex items-center gap-5 text-black'>
@@ -37,14 +50,16 @@ const Navbar =  async() => {
                     await signIn('github')
                     }}>
                    <button type='submit'>
-                    Login with Github
+                    <FaGithub className='size-6'/>
                    </button>
                 </form>
                 <form action={async()=>{
                     "use server";
                     await signIn('google')
                     }}>
-                <button type='submit'>Login with Google</button>
+                <button type='submit'>
+                    <FaGoogle className='size-6'/>
+                    </button>
                 </form>
                 </div>
             )}

@@ -9,6 +9,7 @@ import { formSchema } from '@/lib/validation';
 import {toast} from "sonner";
 import {z} from "zod";
 import { useRouter } from 'next/navigation';
+import { createPitch } from '@/lib/actions';
 const StartupForm = () => {
     const [errors, setErrors] = useState<Record<string,string>>({});
     const [pitch, setPitch] = React.useState("");
@@ -23,14 +24,14 @@ const StartupForm = () => {
                 pitch,
             }
             await formSchema.parseAsync(formValues);
-            console.log(formValues); 
 
-            // const result = await createIdea(prevState,formData,pitch);
-            // if(result.status === "SUCCESS"){
-            //     toast.success("Your startup Pitch has been submitted successfully!")
-            //     router.push(`/startup/${result.id}`)
-            // }
-            // return result;
+            const result = await createPitch(prevState,formData,pitch);
+            
+            if(result.status === "SUCCESS"){
+                toast.success("Your startup Pitch has been submitted successfully!")
+                router.push(`/startup/${result._id}`)
+            }
+            return result;
         } catch (error) {
             if(error instanceof z.ZodError){
                 const fieldErrors = error.flatten().fieldErrors;
