@@ -22,9 +22,10 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
   },
-  // experimental:{
+  experimental:{
   //   ppr: 'incremental',
-  // },
+  esmExternals: "loose",
+  },
   devIndicators:{
     appIsrStatus: true,
     buildActivity: true,
