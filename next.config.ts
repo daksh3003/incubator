@@ -1,8 +1,9 @@
 import {withSentryConfig} from "@sentry/nextjs";
 import type { NextConfig } from "next";
-
+const withTM = require("next-transpile-modules")(["lucide-react"]);
 const nextConfig: NextConfig = {
   /* Config options here */
+  reactStrictMode:true,
   typescript:{
     ignoreBuildErrors: true,
   },
@@ -69,3 +70,4 @@ disableLogger: true,
 // https://vercel.com/docs/cron-jobs
 automaticVercelMonitors: true,
 });
+module.exports = withTM(nextConfig);
