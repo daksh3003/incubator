@@ -163,7 +163,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 <div align="center">
   <img src="public/allStartups.png" alt="Screenshot 1" width="45%">
-  <img src="public/createPitch.png.png" alt="Screenshot 2" width="45%">
+  <img src="public/createPitch.png" alt="Screenshot 2" width="45%">
 </div>
 
 <div align="center">
