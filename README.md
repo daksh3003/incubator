@@ -159,14 +159,23 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. -->
 
 
-## <a name="project-overview">🕸️ Project Overview</a>
-
+### 🏠 All Startups Page  
 <div align="center">
-  <img src="public/allStartups.png" alt="Screenshot 1" width="45%">
-  <img src="public/createPitch.png" alt="Screenshot 2" width="45%">
+  <img src="public/allStartups.png" alt="Home Page" width="80%">
 </div>
 
+### 📄 Pitch Submission Page  
 <div align="center">
-  <img src="public/profile.png" alt="Screenshot 3" width="45%">
-  <img src="public/details.png" alt="Screenshot 4" width="45%">
+  <img src="public/createPitch.png" alt="Pitch Submission Page" width="80%">
 </div>
+
+### 🔍 Browse Pitches  
+<div align="center">
+  <img src="public/details.png" alt="Browse Pitches" width="80%">
+</div>
+
+### 📊 Dashboard  
+<div align="center">
+  <img src="public/profile.png" alt="Dashboard" width="80%">
+</div>
+
